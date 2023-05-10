@@ -2,9 +2,8 @@ import configparser
 import numpy as np
 import json
 import pickle
-import scipy.linalg as la
+import argparse, sys
 from qiskit.providers.basicaer import BasicAer
-from qiskit import QuantumCircuit, QuantumRegister
 from warnings import simplefilter 
 simplefilter(action='ignore', category=DeprecationWarning)
 from itertools import product
@@ -29,9 +28,9 @@ def low_rank_approx(SVD=None, A=None, r=1):
 
 def random_state_gen(n, rank, type_state, seed):
     state_dict = {}
-    if type_state == 'mixed':
+    if type_state == 'arb-mixed':
         rdm = random_density_matrix(2**n, rank, seed=seed)
-    elif type_state == 'pure':
+    elif type_state == 'arb-pure':
         rdm = random_statevector(2**n, seed=seed)
     
     state_dict['state'] = rdm
@@ -84,7 +83,7 @@ def ground_state_reduced_heisen_model(num_qubit):
     state_dict = {}
     aqua_globals.random_seed = 50
     var_form = TwoLocal(rotation_blocks='ry', entanglement_blocks='cz')    
-    vqe = VQE(H, var_form, SLSQP(maxiter = 1),
+    vqe = VQE(H, var_form, SLSQP(maxiter = 500),
             quantum_instance=QuantumInstance(backend=BasicAer.get_backend('statevector_simulator')))
     result = vqe.compute_minimum_eigenvalue(operator=H)
     gs = result['eigenstate']
@@ -173,14 +172,23 @@ def average(buffer:deque):
     return sum(x)/len(x)
 
 if __name__ == '__main__':
-    num_qubit = 4
-    ground_state_reduced_heisen_model(num_qubit)
-    exit()
-
-    seed = 1
-    n_max = 2
-    state_typ = 'mixed'
-    for dim in range(1, n_max+1):
-        for rank in range(dim, 2**dim+1):
-            random_state_gen(dim, rank, state_typ, seed)
-            print(f'size: {dim}, rank: {rank} DONE!')
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--state_typ', type=str, default='arb-mixed', help='State generation for diagonalization')
+    parser.add_argument('--max_dim', type=int, default=2, help='Maximum dimension of quantum stae to generate')
+    parser.add_argument('--seed', type=int, default=0, help='Seed for the state')
+    args = parser.parse_args(sys.argv[1:])
+    
+    if args.state_typ == 'reduce-heisen':
+        ground_state_reduced_heisen_model(args.max_dim)
+        print(f'{args.max_dim}-qubit reduce Heisenberg state and eigenvalue is saved')
+    
+    if args.state_typ == 'arb-mixed':
+        seed = args.seed
+        n_max = args.max_dim
+        for dim in range(1, n_max+1):
+            for rank in range(dim, 2**dim+1):
+                random_state_gen(dim, rank, args.state_typ, seed)
+                print(f'size: {dim}, rank: {rank}, seed: {seed} DONE!')
+    print('*******')
+    print('CHECK state_data FOLDER!')
+    print('*******')

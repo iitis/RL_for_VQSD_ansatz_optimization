@@ -1,6 +1,5 @@
-from qiskit.quantum_info import Statevector, DensityMatrix, partial_trace
-from qiskit.quantum_info.states.random import random_density_matrix
-from qiskit.execute import execute
+from qiskit.quantum_info import DensityMatrix, partial_trace
+from qiskit import *
 from qiskit import QuantumCircuit
 from qiskit import BasicAer
 import numpy as np
