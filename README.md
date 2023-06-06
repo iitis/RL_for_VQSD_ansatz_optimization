@@ -24,17 +24,17 @@ The `utils.py` python script contains two important functions `random_state_gen(
 ```
 python utils.py --state state_typ --max_dim maxdim --seed seedno
 ```
-**to generate (1) :** `state_typ` (`str`) is replaced by `arb-mixed`, `maxdim` (`int`) can be any upper limit to the size of the quantum state to be produced and `seedno` (`int`) specifies the seed for the quantum state.
+**To generate (1) :** `state_type` (`str`) is replaced by `mixed`, `maxdim` (`int`) can be any upper limit to the size of the quantum state to be produced and `seedno` (`int`) specifies the seed for the quantum state.
 
-**An Example** 
+**Example** 
 ``` 
-python utils.py --state arb-mixed --max_dim 4 --seed 1
+python utils.py --state mixed --max_dim 4 --seed 1
 ```
 
 
-**to generate (2) :** `state_typ` (`str`) is replaced by `reduce-heisen`, `maxdim` (`int`) is either 3 or 4 and `seedno` (`int`) is a redundant variable.
+**To generate (2) :** `state_typ` (`str`) is replaced by `reduce-heisen`, `maxdim` (`int`) is either 3 or 4 and `seedno` (`int`) is a redundant variable.
 
-**An Example** 
+**Example** 
 ``` 
 python utils.py --state reduce-heisen --max_dim 3 --seed 342425
 ```
