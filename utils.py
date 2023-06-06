@@ -28,7 +28,7 @@ def low_rank_approx(SVD=None, A=None, r=1):
 
 def random_state_gen(n, rank, type_state, seed):
     state_dict = {}
-    if type_state == 'arb-mixed':
+    if type_state == 'mixed':
         rdm = random_density_matrix(2**n, rank, seed=seed)
     elif type_state == 'arb-pure':
         rdm = random_statevector(2**n, seed=seed)
@@ -173,22 +173,20 @@ def average(buffer:deque):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--state_typ', type=str, default='arb-mixed', help='State generation for diagonalization')
-    parser.add_argument('--max_dim', type=int, default=2, help='Maximum dimension of quantum stae to generate')
-    parser.add_argument('--seed', type=int, default=0, help='Seed for the state')
+    parser.add_argument('--state_type', type=str, default='mixed', help='State generation for diagonalization.')
+    parser.add_argument('--max_dim', type=int, default=2, help='Maximum dimension of the quantum state to generate.')
+    parser.add_argument('--seed', type=int, default=0, help='Seed for the state.')
     args = parser.parse_args(sys.argv[1:])
     
-    if args.state_typ == 'reduce-heisen':
+    if args.state_type == 'reduced-heisen':
         ground_state_reduced_heisen_model(args.max_dim)
-        print(f'{args.max_dim}-qubit reduce Heisenberg state and eigenvalue is saved')
+        print(f'{args.max_dim}-qubit reduced Heisenberg state and eigenvalued are saved.')
     
-    if args.state_typ == 'arb-mixed':
+    if args.state_type == 'mixed':
         seed = args.seed
         n_max = args.max_dim
         for dim in range(1, n_max+1):
             for rank in range(dim, 2**dim+1):
-                random_state_gen(dim, rank, args.state_typ, seed)
-                print(f'size: {dim}, rank: {rank}, seed: {seed} DONE!')
-    print('*******')
-    print('CHECK state_data FOLDER!')
-    print('*******')
+                random_state_gen(dim, rank, args.state_type, seed)
+                print(f'[Info] Size: {dim}, rank: {rank}, seed: {seed} done!')
+    print('[Info] Check `state_data` folder!')
