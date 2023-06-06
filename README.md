@@ -22,9 +22,9 @@ conda activate rl-vqsd
 
 The `utils.py` python script contains two important functions `random_state_gen(...)` and `ground_state_reduced_heisen_model(...)` corresponding to the generation of **(1)** An arbitrary quantum state sampled from the Haar measure. **(2)** The reduced ground state of the Heisenberg model. You just need to run
 ```
-python utils.py --state state_typ --max_dim maxdim --seed seedno
+python utils.py --state state_type --max_dim maxdim --seed seedno
 ```
-**To generate (1) :** `state_type` (`str`) is replaced by `mixed`, `maxdim` (`int`) can be any upper limit to the size of the quantum state to be produced and `seedno` (`int`) specifies the seed for the quantum state.
+**To generate (1) :** `state_type` (`str`) is replaced by `mixed`, `maxdim` (`int`) can be any upper limit to the size of the quantum state to be produced, and `seedno` (`int`) specifies the seed for the quantum state.
 
 **Example** 
 ``` 
