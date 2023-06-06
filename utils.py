@@ -38,7 +38,7 @@ def random_state_gen(n, rank, type_state, seed):
     with open(f'state_data/{n}_qubit_{type_state}_rank_{rank}_state_data_seed_{seed}.p', 'wb') as fp:
         pickle.dump(state_dict, fp)
 
-def ground_state_reduced_heisen_model(num_qubit):
+def ground_state_reduced_heisenberg_model(num_qubit):
 
     # HAMILTONIAN
     if num_qubit == 4:
@@ -91,7 +91,7 @@ def ground_state_reduced_heisen_model(num_qubit):
     rdm = partial_trace(gs, list(range(num_qubit)))
     state_dict['state'] = rdm #np.kron(rdm.data,rdm.data)
     state_dict['trace'] = np.trace(np.matmul(rdm.data,rdm.data)).real
-    with open(f'state_data/{num_qubit}_qubit_reduce_heisen_model_state_data.p', 'wb') as fp:
+    with open(f'state_data/{num_qubit}_qubit_reduced_heisenberg_model_state_data.p', 'wb') as fp:
         pickle.dump(state_dict, fp)
 
 def get_config(config_name,experiment_name, path='configuration_files',
@@ -178,8 +178,8 @@ if __name__ == '__main__':
     parser.add_argument('--seed', type=int, default=0, help='Seed for the state.')
     args = parser.parse_args(sys.argv[1:])
     
-    if args.state_type == 'reduced-heisen':
-        ground_state_reduced_heisen_model(args.max_dim)
+    if args.state_type == 'reduced-heisenberg':
+        ground_state_reduced_heisenberg_model(args.max_dim)
         print(f'{args.max_dim}-qubit reduced Heisenberg state and eigenvalued are saved.')
     
     if args.state_type == 'mixed':

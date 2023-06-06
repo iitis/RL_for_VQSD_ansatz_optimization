@@ -20,7 +20,7 @@ conda activate rl-vqsd
 ---
 ## How to generate quantum state to diagonalize?
 
-The `utils.py` python script contains two important functions `random_state_gen(...)` and `ground_state_reduced_heisen_model(...)` corresponding to the generation of **(1)** An arbitrary quantum state sampled from the Haar measure. **(2)** The reduced ground state of the Heisenberg model. You just need to run
+The `utils.py` python script contains two important functions `random_state_gen(...)` and `ground_state_reduced_heisenberg_model(...)` corresponding to the generation of **(1)** An arbitrary quantum state sampled from the Haar measure. **(2)** The reduced ground state of the Heisenberg model. You just need to run
 ```
 python utils.py --state state_type --max_dim maxdim --seed seedno
 ```
@@ -32,11 +32,11 @@ python utils.py --state mixed --max_dim 4 --seed 1
 ```
 
 
-**To generate (2) :** `state_typ` (`str`) is replaced by `reduce-heisen`, `maxdim` (`int`) is either 3 or 4 and `seedno` (`int`) is a redundant variable.
+**To generate (2) :** `state_typ` (`str`) is replaced by `reduced-heisenberg`, `maxdim` (`int`) is either 3 or 4 and `seedno` (`int`) is a redundant variable.
 
 **Example** 
 ``` 
-python utils.py --state reduce-heisen --max_dim 3 --seed 342425
+python utils.py --state reduced-heisenberg --max_dim 3 --seed 342425
 ```
 
 ---
@@ -60,13 +60,13 @@ All the possible configurations can be found in the folder `configuration_files`
 **To run the reduced Heisenberg model :**
 
 ```
-python main.py --seed 102 --config h_s_3_reduce_heisen --experiment_name "global_COBYLA/"
+python main.py --seed 102 --config h_s_3_reduced_heisenberg --experiment_name "global_COBYLA/"
 ```
 
 **Diagonalizing using random search :**
 
 ```
-python main.py --seed 100 --config h_s_3_reduce_heisen --experiment_name "random_search/"
+python main.py --seed 100 --config h_s_3_reduced_heisenberg --experiment_name "random_search/"
 ```
 
 **Diagonalizing using Bootstrap DDQN :**
@@ -82,7 +82,7 @@ The results of the above will be saved in the `results` folder.
 
 **The reproduce the 2-qubit eigenvalue convergence (Fig. 6a in article) :** You can run one of the jupyter notebooks titled `eigenvalue analysis.ipynb` and run each cell. Similarly,
 
-**The reproduce the 3-qubit eigenvalue convergence (Fig. 9 in article) :** You can run one of the jupyter notebooks titled `eigenvalue analysis_reduce_heisen.ipynb` and run each cell.
+**The reproduce the 3-qubit eigenvalue convergence (Fig. 9 in article) :** You can run one of the jupyter notebooks titled `eigenvalue analysis_reduced_heisenberg.ipynb` and run each cell.
 
 **Constant structure RL-ansatz statistics (Fig. 8 in article) :** You just need to run the `constant_structure_VQSD.ipynb` to first load the RL-ansatz of your choice and then use this ansatz to diagonalize `N` arbitrary quantum states of same dimension. This is utilized to plot in the last couple of cells of the notebook.
 
