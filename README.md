@@ -17,7 +17,14 @@ To install activate the environment please do the following:
 conda env create -f rl-vqsd.yml
 conda activate rl-vqsd 
 ```
----
+Alternatively, you could run
+```
+conda create -n rl-vqsd python=3.8.5
+pip install qiskit==0.31.0 qiskit-aqua
+pip install torch
+```
+
+
 ## How to generate quantum state to diagonalize?
 
 The `utils.py` python script contains two important functions `random_state_gen(...)` and `ground_state_reduced_heisenberg_model(...)` corresponding to the generation of **(1)** An arbitrary quantum state sampled from the Haar measure. **(2)** The reduced ground state of the Heisenberg model. You just need to run
