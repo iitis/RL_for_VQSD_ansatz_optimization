@@ -5,3 +5,6 @@ __pycache__/
 
 # PyCharm project
 .idea/
+
+# Jupyter checkopints
+.ipynb_checkpoints/
