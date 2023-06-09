@@ -32,7 +32,7 @@ pip install mpl-axes-aligner
 ```
 and Conda environment with all packages can be created using
 ```
-conda env create -f rl-vqsd.yml
+conda env create -f rl-vqsd-full.yml
 ```
 
 ## How to generate quantum state to diagonalize?
