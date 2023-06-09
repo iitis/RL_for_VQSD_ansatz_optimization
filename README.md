@@ -30,6 +30,10 @@ pip install jupyter
 pip install qulacs qulacsvis
 pip install mpl-axes-aligner
 ```
+and Conda environment with all packages can be created using
+```
+conda env create -f rl-vqsd.yml
+```
 
 ## How to generate quantum state to diagonalize?
 
