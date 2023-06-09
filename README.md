@@ -24,7 +24,7 @@ pip install qiskit==0.31.0 qiskit-aqua
 pip install torch
 ```
 
-Additionally, for runnign Jupyert notebooks you should also install
+Additionally, for running Jupyter notebooks you should also install
 ```
 pip install jupyter
 pip install qulacs qulacsvis
