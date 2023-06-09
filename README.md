@@ -63,26 +63,26 @@ python main.py --seed seedagent --config config_file --experiment_name "global_C
 
 In the above, the `seedagent` (`int`) corresponds to the different initialization to the Neural Network (NN) and the `config_file` (`str`) is the configuration corresponding to the state that need to be diagonalized, the hyperparameters of the NN and the agent configuration and it looks like: `h_s_2_rank_4_1`  where `2` corresponds to the number of qubit of the state, `4` is the rank of the state and `1` is the seed used to generate the state.
 
-**An Example :** 
+**Example:** 
 ```
 python main.py --seed 1 --config h_s_2_rank_4_1 --experiment_name "global_COBYLA/"
 ```
 
 All the possible configurations can be found in the folder `configuration_files`.
 
-**To run the reduced Heisenberg model :**
+**To run the reduced Heisenberg model:**
 
 ```
 python main.py --seed 102 --config h_s_3_reduced_heisenberg --experiment_name "global_COBYLA/"
 ```
 
-**Diagonalizing using random search :**
+**Diagonalizing using random search:**
 
 ```
 python main.py --seed 100 --config h_s_3_reduced_heisenberg --experiment_name "random_search/"
 ```
 
-**Diagonalizing using Bootstrap DDQN :**
+**Diagonalizing using Bootstrap DDQN:**
 
 ```
 python main.py --seed 100 --config h_s_2_rank_4_1_bs --experiment_name "global_COBYLA/"
@@ -93,9 +93,9 @@ The `bs` in the suffix of each configuration file corresponds to the utilization
 ## How to reproduce the results?
 The results of the above will be saved in the `results` folder.
 
-**The reproduce the 2-qubit eigenvalue convergence (Fig. 6a in article) :** You can run one of the jupyter notebooks titled `eigenvalue analysis.ipynb` and run each cell. Similarly,
+**The reproduce the 2-qubit eigenvalue convergence (Fig. 6a in article) :** You can run one of the jupyter notebooks titled `eigenvalue_analysis.ipynb` and run each cell. Similarly,
 
-**The reproduce the 3-qubit eigenvalue convergence (Fig. 9 in article) :** You can run one of the jupyter notebooks titled `eigenvalue analysis_reduced_heisenberg.ipynb` and run each cell.
+**The reproduce the 3-qubit eigenvalue convergence (Fig. 9 in article) :** You can run one of the jupyter notebooks titled `eigenvalue_analysis_reduced_heisenberg.ipynb` and run each cell.
 
 **Constant structure RL-ansatz statistics (Fig. 8 in article) :** You just need to run the `constant_structure_VQSD.ipynb` to first load the RL-ansatz of your choice and then use this ansatz to diagonalize `N` arbitrary quantum states of same dimension. This is utilized to plot in the last couple of cells of the notebook.
 
