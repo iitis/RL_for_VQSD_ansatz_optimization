@@ -20,6 +20,7 @@ conda activate rl-vqsd
 Alternatively, you could run
 ```
 conda create -n rl-vqsd python=3.8.5
+conda activate rl-vqsd
 pip install qiskit==0.31.0 qiskit-aqua
 pip install torch
 ```
