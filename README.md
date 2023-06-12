@@ -27,7 +27,6 @@ pip install torch
 Additionally, for running Jupyter notebooks you should also install
 ```
 pip install jupyter
-pip install qulacs qulacsvis
 pip install mpl-axes-aligner
 ```
 and Conda environment with all packages can be created using
