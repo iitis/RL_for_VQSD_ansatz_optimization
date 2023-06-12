@@ -32,14 +32,14 @@ dependencies:
       - certifi==2023.5.7
       - cffi==1.15.1
       - charset-normalizer==3.1.0
-      - cmake==3.26.3
+      - cmake==3.26.4
       - cryptography==41.0.1
       - dill==0.3.6
       - dlx==1.0.4
       - docplex==2.25.236
       - fastdtw==0.3.4
       - fastjsonschema==2.17.1
-      - filelock==3.12.0
+      - filelock==3.12.1
       - frozendict==2.3.8
       - h5py==3.2.1
       - html5lib==1.1
@@ -87,8 +87,8 @@ dependencies:
       - quandl==3.7.0
       - requests==2.31.0
       - requests-ntlm==1.2.0
-      - retworkx==0.12.1
-      - rustworkx==0.12.1
+      - retworkx==0.13.0
+      - rustworkx==0.13.0
       - scikit-learn==1.2.2
       - scipy==1.10.1
       - six==1.16.0
@@ -101,8 +101,9 @@ dependencies:
       - tweedledum==1.1.1
       - typing-extensions==4.6.3
       - tzdata==2023.3
-      - urllib3==2.0.2
+      - urllib3==2.0.3
       - webencodings==0.5.1
-      - websocket-client==1.5.2
-      - yfinance==0.2.18
+      - websocket-client==1.5.3
+      - yfinance==0.2.20
       - zipp==3.15.0
+prefix: /home/jam/Local/miniconda3/envs/rl-vqsd
