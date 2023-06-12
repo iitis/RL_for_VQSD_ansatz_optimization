@@ -7,7 +7,7 @@ This is a repository for the code used to calculate the numerical results presen
 ---
 
 ## Software Installation
-The code was used on Ubuntu OS 20.04.
+The code was used on Ubuntu OS 22.04.
 
 For this project, we use Anaconda which can be downloaded from https://www.anaconda.com/products/individual.
 
