@@ -86,14 +86,6 @@ python main.py --seed 102 --config h_s_3_reduced_heisenberg --experiment_name "g
 python main.py --seed 100 --config h_s_3_reduced_heisenberg --experiment_name "random_search/"
 ```
 
-**Diagonalizing using Bootstrap DDQN:**
-
-```
-python main.py --seed 100 --config h_s_2_rank_4_1_bs --experiment_name "global_COBYLA/"
-```
-
-The `bs` in the suffix of each configuration file corresponds to the utilization of `Bootstrapping`.
-
 ## How to reproduce the results?
 The results of the above will be saved in the `results` folder.
 
