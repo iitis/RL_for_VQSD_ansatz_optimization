@@ -97,4 +97,4 @@ The results of the above will be saved in the `results` folder.
 
 **The reproduce the 2-qubit eigenvalue error (Fig. 6b in article) :** You first need to produce the diagonalization results using Layered Hardware Efficient Ansatz (LHEA) which can be done using and by running the `LHEA_VQSD.ipynb` file. Then utilizing the LHEA results in `LHEA_plot_analysis.ipynb` we produce Figure 6b.
 
-**Comparison with random search (Fig. 11a, 11b and 12)** Both the plots for 2 and 3 qubits to compare the DDQN with random search can be generated just by running the `plot_analysis_random_search.ipynb` file. 
+**Comparison with random search (Fig. 12a, 12b and 13)** Both the plots for 2 and 3 qubits to compare the DDQN with random search can be generated just by running the `plot_analysis_random_search.ipynb` file. 
