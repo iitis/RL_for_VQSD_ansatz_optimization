@@ -1,3 +1,6 @@
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8042976.svg)](https://doi.org/10.5281/zenodo.8042976)
+
 # Code for "Enhancing quantum variational state diagonalization using reinforcement learning techniques"
 
 ---
