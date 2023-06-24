@@ -1,16 +1,31 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8042976.svg)](https://doi.org/10.5281/zenodo.8042976)
 
-# Code for "Enhancing quantum variational state diagonalization using reinforcement learning techniques"
+# Code for "Enhancing variational quantum state diagonalization using reinforcement learning techniques"
 
 ---
 
-This is a repository for the code used to calculate the numerical results presented in the article "Enhancing quantum variational state diagonalization using reinforcement learning techniques".
+This is a repository for the code used to calculate the numerical results presented in the manuscript:
 
+Akash Kundu, Przemysław Bedełek, Mateusz Ostaszewski, Onur Danaci, Yash J. Patel, Vedran Dunjko, Jarosław A. Miszczak,
+*Enhancing variational quantum state diagonalization using reinforcement learning techniques*,
+arXiv:[2306.11086](https://arxiv.org/abs/2306.11086) (2023).
+
+```commandline
+@Misc{kundu2023enhancing,
+  author    = {Kundu, Akash and Bedełek, Przemysław and Ostaszewski, Mateusz and Danaci, Onur and Patel, Yash J. and Dunjko, Vedran and Miszczak, Jarosław A.},
+  title     = {Enhancing variational quantum state diagonalization using reinforcement learning techniques},
+  year      = {2023},
+  copyright = {Creative Commons Attribution 4.0 International},
+  doi       = {10.48550/ARXIV.2306.11086},
+  keywords  = {Quantum Physics (quant-ph), Artificial Intelligence (cs.AI), Machine Learning (cs.LG), FOS: Physical sciences, FOS: Physical sciences, FOS: Computer and information sciences, FOS: Computer and information sciences},
+  publisher = {arXiv},
+}
+```
 ---
 
 ## Software Installation
-The code was used on Ubuntu OS 22.04.
+The code was used on Ubuntu GNU/Linux 22.04.
 
 For this project, we use Anaconda which can be downloaded from https://www.anaconda.com/products/individual.
 
