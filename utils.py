@@ -128,8 +128,7 @@ def get_config(config_name,experiment_name, path='configuration_files',
 
 def dictionary_of_actions(num_qubits):
     """
-    Creates dictionary of actions for system which steers positions of gates,
-    and axes of rotations.
+    Creates dictionary of actions for system which steers the position of CX gates
     """
     dictionary = dict()
     i = 0
@@ -139,11 +138,11 @@ def dictionary_of_actions(num_qubits):
         dictionary[i] =  [c, x, num_qubits, 0]
         i += 1
    
-    """h  denotes rotation axis. 1, 2, 3 -->  X, Y, Z axes """
-    for r, h in product(range(num_qubits),
-                           range(1, 4)):
-        dictionary[i] = [num_qubits, 0, r, h]
-        i += 1
+    # """h  denotes rotation axis. 1, 2, 3 -->  X, Y, Z axes """
+    # for r, h in product(range(num_qubits),
+    #                        range(1, 4)):
+    #     dictionary[i] = [num_qubits, 0, r, h]
+    #     i += 1
     return dictionary
         
 def dict_of_actions_revert_q(num_qubits):
