@@ -1,5 +1,12 @@
+# from main import Saver
+
+
+# CHANGE QULACS TO QISKIT
 import time
 import torch
+from qiskit.quantum_info import DensityMatrix
+from qiskit import QuantumCircuit
+# from qulacs.gate import CNOT, RX, RY, RZ
 from utils import dictionary_of_actions, low_rank_approx
 from sys import stdout
 import scipy
@@ -9,7 +16,6 @@ import numpy as np
 import copy
 import curricula
 import pickle
-import cudaq
 
 import copy
 # from qulacsvis import circuit_drawer
@@ -158,6 +164,7 @@ class CircuitEnv():
 
 
         # print(next_state[:3])
+        self.state = next_state.clone()
         if self.optim_method in ["scipy_each_step"]:
             thetas, nfev, opt_ang = self.scipy_optim(self.optim_alg)
             for i in range(self.num_layers):
