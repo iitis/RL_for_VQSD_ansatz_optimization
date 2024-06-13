@@ -12,7 +12,7 @@ class Parametric_Circuit:
         self.n_qubits = n_qubits
         self.ansatz = QuantumCircuit(n_qubits)
 
-    def construct_ansatz(self, state):
+    def construct_ansatz(self, state, epsilon):
         # print('--------------')
         # print(state[:3])
         
@@ -35,11 +35,11 @@ class Parametric_Circuit:
                 for pos, r in enumerate(rot_direction_list):
                     rot_qubit = rot_qubit_list[pos]
                     if r == 0:
-                        self.ansatz.rx(thetas[0][rot_qubit].item(), rot_qubit.item())
+                        self.ansatz.rx(thetas[0][rot_qubit].item()+epsilon, rot_qubit.item())
                     elif r == 1:
-                        self.ansatz.ry(thetas[1][rot_qubit].item(), rot_qubit.item())
+                        self.ansatz.ry(thetas[1][rot_qubit].item()+epsilon, rot_qubit.item())
                     elif r == 2:
-                        self.ansatz.rz(thetas[2][rot_qubit].item(), rot_qubit.item())
+                        self.ansatz.rz(thetas[2][rot_qubit].item()+epsilon, rot_qubit.item())
                     else:
                         print(f'rot-axis = {r} is in invalid')
                         assert r >2                       

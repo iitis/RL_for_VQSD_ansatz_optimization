@@ -141,7 +141,6 @@ class CircuitEnv():
         elif ctrl < self.num_qubits:
             gate_tensor = max( self.moments[ctrl], self.moments[targ] )
 
-        
         if ctrl < self.num_qubits:
             next_state[gate_tensor][targ][ctrl] = 1
         elif rot_qubit < self.num_qubits:

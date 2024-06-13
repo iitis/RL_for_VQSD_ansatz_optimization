@@ -30,6 +30,8 @@ class Saver:
                                                  'bond_distance': 0,
                                                  'opt_ang' : [],
                                                  'save_circ' : [],
+                                                 'ent_neg' : [],
+                                                 'grad' : [],
                                                  }
         elif mode == 'test':
             self.stats_file[mode][episode_no] = {'actions': [],
@@ -38,6 +40,7 @@ class Saver:
                                                  'bond_distance': 0,
                                                  'opt_ang' : [],
                                                  'save_circ' : [],
+                                                 'ent_neg' : [],
                                                  }
 
     def save_file(self):
@@ -80,6 +83,8 @@ def agent_test(env, agent, episode_no, seed, output_path,threshold):
         state = next_state.clone()
         assert type(env.error) == float 
         agent.saver.stats_file['test'][episode_no]['errors'].append(env.error)
+        agent.saver.stats_file['test'][episode_no]['save_circ'].append(env.save_circ)
+        agent.saver.stats_file['test'][episode_no]['opt_ang'].append(env.opt_ang)
         
         if done:
             
@@ -128,6 +133,10 @@ def one_episode(episode_no, env, agent, episodes):
 
         assert type(env.error) == float
         agent.saver.stats_file['train'][episode_no]['errors'].append(env.error)
+        agent.saver.stats_file['train'][episode_no]['save_circ'].append(env.save_circ)
+        agent.saver.stats_file['train'][episode_no]['opt_ang'].append(env.opt_ang)
+        agent.saver.stats_file['train'][episode_no]['ent_neg'].append(env.ent_neg_quantfier)
+        agent.saver.stats_file['train'][episode_no]['grad'].append(env.gradient)
 
         if agent.memory_reset_switch:            
            if env.error < agent.memory_reset_threshold:
